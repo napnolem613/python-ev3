@@ -213,7 +213,7 @@ class MqttClient(object):
         """
         message_dict = {"type": function_name}
         if parameter_list:
-            if isinstance(parameter_list, collections.Iterable):
+            if isinstance(parameter_list, collections.abc.Iterable):
                 message_dict["payload"] = parameter_list
             else:
                 # Attempt to bail out users that pass a single item that was a non-list.
